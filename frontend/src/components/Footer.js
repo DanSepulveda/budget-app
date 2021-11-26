@@ -1,10 +1,15 @@
-import React from 'react'
-
-const Footer = () => {
+const Footer = ({ lang }) => {
     return (
-        <div>
-
-        </div>
+        <footer className="flex-row-cc">
+            <span>
+                &copy;
+                {lang === 'es'
+                    ? 'Desarrollado por '
+                    : 'Developed by '
+                }
+                Daniel Sepúlveda
+            </span>
+        </footer>
     )
 }
 

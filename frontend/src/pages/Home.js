@@ -1,11 +1,18 @@
 import MovementForm from "../components/MovementForm"
+import ResumeSection from '../components/ResumeSection'
 
 const Home = () => {
     return (
-        <section>
-            <h2>hola</h2>
+        <>
+            <ResumeSection />
             <MovementForm />
-        </section>
+            <MovementForm />
+            <MovementForm />
+            <MovementForm />
+            <MovementForm />
+            <MovementForm />
+            <MovementForm />
+        </>
     )
 }
 
