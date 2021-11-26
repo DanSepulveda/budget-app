@@ -1,5 +1,7 @@
 const express = require('express')
-
+require('dotenv').config()
+require('./config/database')
+// const router = require('./routes/index')
 
 const app = express()
 app.use(express.static('assets'))
