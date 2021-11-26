@@ -72,7 +72,7 @@ main {
 section.resume-section {
   width: 100%;
   height: 20vh;
-  margin-bottom: 3em;
+  margin-bottom: 4em;
 }
 
 section.resume-section > article:first-child {
@@ -92,10 +92,36 @@ section.resume-section > article:last-child {
 
 article.resume-box {
   width: 30%;
-  height: 25vh;
+  min-height: 25vh;
   background-color: #eee;
   border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3vh 2em;
   /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(0, 0, 0, 0.1); */
+}
+
+article.resume-box img {
+  height: 50px;
+}
+
+section.transaction-container h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+section.transaction-container article {
+  margin-bottom: 1em;
+}
+
+article.transaction-row {
+  width: 100%;
+  min-height: 10vh;
+  background-color: red;
+  border-radius: 5px;
 }
 
 /* FOOTER */
