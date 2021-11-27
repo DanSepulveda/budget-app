@@ -30,4 +30,7 @@ router.route('/category/:id')
     .put(categoryControllers.editCategory)
     .delete(categoryControllers.deleteCategory)
 
+router.route('/reset')
+    .post(categoryControllers.reset)
+
 module.exports = router
