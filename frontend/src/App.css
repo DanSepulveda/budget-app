@@ -124,8 +124,20 @@ section.transaction-container article {
 article.transaction-row {
   width: 100%;
   min-height: 10vh;
-  background-color: red;
+  background-color: white;
   border-radius: 5px;
+}
+
+article.transaction-row img {
+  width: 7vh;
+  margin: 0 1em;
+}
+
+article.transaction-row div.info {
+  flex: 1;
+  display: flex;
+  margin-left: 1em;
+  margin-right: 3em;
 }
 
 /* FOOTER */
