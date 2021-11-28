@@ -55,6 +55,16 @@ const transactionControllers = {
         } catch (error) {
             res.json({ success: false, error: error.message })
         }
+    },
+    getResume: async (req, res) => {
+        try {
+            const expenses = await pool.query('SELECT SUM(amount) AS sum, COUNT(amount) AS count FROM transactions WHERE type="expenses"')
+            const incomes = await pool.query('SELECT SUM(amount) AS sum, COUNT(amount) AS count FROM transactions WHERE type="incomes"')
+            const resume = incomes[0].sum - expenses[0].sum
+            res.json({ success: true, response: { expenses: expenses[0], incomes: incomes[0], resume } })
+        } catch (error) {
+            res.json({ success: false, error: error.message })
+        }
     }
 }
 

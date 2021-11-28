@@ -17,6 +17,9 @@ router.route('/transaction/:id')
     .put(transactionControllers.editTransaction)
     .delete(transactionControllers.deleteTransaction)
 
+router.route('/transactions/resume')
+    .get(transactionControllers.getResume)
+
 router.route('/reset')
     .post(transactionControllers.reset)
 

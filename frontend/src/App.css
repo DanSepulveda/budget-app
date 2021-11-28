@@ -101,11 +101,14 @@ article.resume-box {
   align-items: center;
   justify-content: space-between;
   padding: 3vh 2em;
-  /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(0, 0, 0, 0.1); */
 }
 
 article.resume-box img {
   height: 50px;
+}
+
+article.resume-box h3 span {
+  font-size: 30px;
 }
 
 section.transaction-container h1 {
