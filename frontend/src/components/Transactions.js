@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import TransactionRow from './TransactionRow'
 
 const Transactions = ({ lang, endpoint, title }) => {
     const [transactions, setTransactions] = useState([])
 
-    useEffect(() => {
-
+    useEffect(async () => {
+        try {
+            let response = await axios.get(endpoint)
+            setTransactions(response.data.response)
+        } catch (error) {
+            console.log(error)
+        }
     }, [])
 
     return (
@@ -16,16 +22,7 @@ const Transactions = ({ lang, endpoint, title }) => {
                     : title.en
                 }
             </h1>
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
-            <TransactionRow />
+            {transactions.map(transaction => <TransactionRow key={transaction.id} data={transaction} />)}
         </section>
     )
 }

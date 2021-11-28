@@ -1,4 +1,4 @@
-const ResumeBox = ({ title, lang, mount }) => {
+const ResumeBox = ({ title, lang, amount }) => {
     return (
         <article className="resume-box">
             <h2>{title}</h2>
@@ -9,7 +9,7 @@ const ResumeBox = ({ title, lang, mount }) => {
             {title !== 'Saldo' && title !== 'Balance'
                 ? <h3>
                     {lang === 'es' ? 'N° Movimientos: ' : 'No. of Transactions: '}
-                    {mount}
+                    {amount}
                 </h3>
                 : <h3></h3>
             }

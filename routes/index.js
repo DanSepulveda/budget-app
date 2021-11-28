@@ -9,16 +9,19 @@ router.route('/transactions')
     .post(transactionControllers.createTransaction)
     .get(transactionControllers.getAllTransactions)
 
-router.route('/transactions/incomes')
-    .get(transactionControllers.getIncomeTransactions)
-
-router.route('/transactions/expenses')
-    .get(transactionControllers.getExpensesTransactions)
+router.route('/transactions/cat/:type')
+    .get(transactionControllers.getTransactionsPerType)
 
 router.route('/transaction/:id')
     .get(transactionControllers.getTransaction)
     .put(transactionControllers.editTransaction)
     .delete(transactionControllers.deleteTransaction)
+
+router.route('/reset')
+    .post(transactionControllers.reset)
+
+router.route('/reset')
+    .post(transactionControllers.reset)
 
 // CATEGORIES
 router.route('/categories')
@@ -29,8 +32,5 @@ router.route('/category/:id')
     .get(categoryControllers.getCategory)
     .put(categoryControllers.editCategory)
     .delete(categoryControllers.deleteCategory)
-
-router.route('/reset')
-    .post(categoryControllers.reset)
 
 module.exports = router

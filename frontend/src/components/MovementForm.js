@@ -20,8 +20,8 @@ const MovementForm = () => {
                 onSubmit={values => console.log(values)}
             >
                 <Form>
-                    <TextInput name="concept" id="concept" label="Concepto" />
-                    <TextInput name="mount" id="mount" label="Monto" />
+                    <TextInput name="description" id="description" label="Concepto" />
+                    <TextInput name="amount" id="amount" label="Monto" />
                     <TextInput name="date" id="date" label="Fecha" />
                     <SelectInput name="hola" id="hola" label="Tipo">
                         <option value="entry">Ingreso</option>

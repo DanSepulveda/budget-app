@@ -52,14 +52,6 @@ const categoryControllers = {
             res.json({ success: false, error: error.message })
         }
     },
-    reset: async (req, res) => {
-        try {
-            await pool.query('DROP TABLE categories')
-            res.json({ success: true })
-        } catch (error) {
-            res.json({ success: false, error: error.message })
-        }
-    }
 }
 
 module.exports = categoryControllers

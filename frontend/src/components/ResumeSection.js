@@ -6,17 +6,17 @@ const ResumeSection = ({ lang }) => {
             <ResumeBox
                 title={lang === 'es' ? 'Ingresos' : 'Incomes'}
                 lang={lang}
-                mount={1000}
+                amount={1000}
             />
             <ResumeBox
                 title={lang === 'es' ? 'Saldo' : 'Balance'}
                 lang={lang}
-                mount={400}
+                amount={400}
             />
             <ResumeBox
                 title={lang === 'es' ? 'Gastos' : 'Expenses'}
                 lang={lang}
-                mount={600}
+                amount={600}
             />
         </section>
     )
