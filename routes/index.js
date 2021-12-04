@@ -7,7 +7,9 @@ const router = express.Router()
 // TRANSACTIONS
 router.route('/transactions')
     .post(transactionControllers.createTransaction)
-    .get(transactionControllers.getAllTransactions)
+
+router.route('/transactions/:query')
+    .get(transactionControllers.getTransactions)
 
 router.route('/transactions/cat/:type')
     .get(transactionControllers.getTransactionsPerType)

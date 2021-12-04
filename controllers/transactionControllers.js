@@ -32,9 +32,17 @@ const transactionControllers = {
             res.json({ success: false, error: error.message })
         }
     },
-    getAllTransactions: async (req, res) => {
+    getTransactions: async (req, res) => {
         try {
-            let transactions = await pool.query('SELECT transactions.id, transactions.description, transactions.type, transactions.amount, transactions.date, transactions.category_id as category, categories.name, categories.nombre, categories.image from transactions INNER JOIN categories ON category_id=categories.id')
+            let query = req.params.query
+            if (!isNaN(query)) {
+                query = `TOP ${query}`
+            } else if (query === 'all') {
+                query = null
+            } else {
+                throw new Error()
+            }
+            let transactions = await pool.query(`SELECT ${query} transactions.id, transactions.description, transactions.type, transactions.amount, transactions.date, transactions.category_id as category, categories.name, categories.nombre, categories.image from transactions INNER JOIN categories ON category_id=categories.id`)
             res.json({ success: true, response: transactions })
         } catch (error) {
             res.json({ success: false, error: error.message })

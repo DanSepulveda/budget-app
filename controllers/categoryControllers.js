@@ -4,9 +4,9 @@ const categoryControllers = {
     createCategory: async (req, res) => {
         const { name, nombre, type, image } = req.body
         try {
-            await pool.query('CREATE TABLE IF NOT EXISTS categories (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20) NOT NULL, nombre VARCHAR(20) NOT NULL, type VARCHAR(10) NOT NULL, image VARCHAR(50) NOT NULL)')
+            await pool.query('CREATE TABLE IF NOT EXISTS categories (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20) NOT NULL, nombre VARCHAR(20) NOT NULL, type VARCHAR(10) NOT NULL, image VARCHAR(50) NOT NULL); ')
             await pool.query(`INSERT INTO categories VALUES (NULL, '${name}', '${nombre}', '${type}', '${image}')`)
-            res.json({ success: true })
+            res.status(200).json({ success: true })
         } catch (error) {
             res.json({ success: false, error: error.message })
         }
@@ -14,7 +14,7 @@ const categoryControllers = {
     getCategory: async (req, res) => {
         try {
             let category = await pool.query(`SELECT * FROM categories WHERE id='${req.params.id}'`)
-            res.json({ success: true, response: category })
+            res.status(200).json({ success: true, response: category })
         } catch (error) {
             res.json({ success: false, error: error.message })
         }
@@ -31,7 +31,7 @@ const categoryControllers = {
         })
         try {
             await pool.query(`UPDATE categories SET ${query} WHERE id=${req.params.id}`)
-            res.json({ success: true })
+            res.status(200).json({ success: true })
         } catch (error) {
             res.json({ success: false, error: error.message })
         }
@@ -39,7 +39,7 @@ const categoryControllers = {
     deleteCategory: async (req, res) => {
         try {
             await pool.query(`DELETE FROM categories WHERE id='${req.params.id}'`)
-            res.json({ success: true })
+            res.status(200).json({ success: true })
         } catch (error) {
             res.json({ success: false, error: error.message })
         }
@@ -47,7 +47,7 @@ const categoryControllers = {
     getCategories: async (req, res) => {
         try {
             let categories = await pool.query('SELECT * from categories')
-            res.json({ success: true, response: categories })
+            res.status(200).json({ success: true, response: categories })
         } catch (error) {
             res.json({ success: false, error: error.message })
         }

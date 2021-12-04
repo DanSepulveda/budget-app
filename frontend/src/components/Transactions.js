@@ -34,7 +34,7 @@ const Transactions = ({ lang, endpoint, title }) => {
             <h1>
                 {lang === 'es' ? title.es : title.en}
             </h1>
-            {transactions.map(transaction => <TransactionRow key={transaction.id} data={transaction} lang={lang} />)}
+            {transactions?.map(transaction => <TransactionRow key={transaction.id} data={transaction} lang={lang} />)}
         </section>
     )
 }

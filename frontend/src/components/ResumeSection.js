@@ -34,17 +34,17 @@ const ResumeSection = ({ lang }) => {
             <ResumeBox
                 title={lang === 'es' ? 'Ingresos' : 'Incomes'}
                 lang={lang}
-                data={data.incomes}
+                data={data?.incomes}
             />
             <ResumeBox
                 title={lang === 'es' ? 'Saldo' : 'Balance'}
                 lang={lang}
-                data={{ sum: data.resume }}
+                data={{ sum: data?.resume }}
             />
             <ResumeBox
                 title={lang === 'es' ? 'Gastos' : 'Expenses'}
                 lang={lang}
-                data={data.expenses}
+                data={data?.expenses}
             />
         </section>
     )

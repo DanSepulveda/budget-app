@@ -111,6 +111,12 @@ article.resume-box h3 span {
   font-size: 30px;
 }
 
+section.transaction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 section.transaction-container h1 {
   text-align: center;
   margin-bottom: 1em;
@@ -138,6 +144,83 @@ article.transaction-row div.info {
   display: flex;
   margin-left: 1em;
   margin-right: 3em;
+}
+
+div.form-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+div.form-section {
+  background-color: #eee;
+  border-radius: 10px;
+  width: 40%;
+  height: 80%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -3px -3px 3px rgba(0, 0, 0, 0.1);
+  padding: 1em 2em;
+}
+
+div.form-section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.form-section svg {
+  font-size: 40px;
+  align-self: flex-end;
+  color: #6886c5;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+div.form-section svg:hover {
+  color: #607bb4;
+}
+
+div.form-section form > div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.form-section label {
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  font-size: 20px;
+  color: #444;
+}
+
+div.form-section input,
+div.form-section select {
+  width: 100%;
+  padding: 0.5em 1em;
+  font-size: 17px;
+  color: #444;
+}
+
+button.button {
+  margin-bottom: 2em;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  background-color: #6886c5;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+button.button:hover {
+  background-color: #607bb4;
 }
 
 /* FOOTER */

@@ -7,7 +7,7 @@ const Home = ({ lang }) => {
             <ResumeSection lang={lang} />
             <Transactions
                 lang={lang}
-                endpoint='http://localhost:4000/api/transactions'
+                endpoint='http://localhost:4000/api/transactions/10'
                 title={{ es: 'Últimos 10 movimientos', en: '10 Latest Transactions' }}
             />
         </>

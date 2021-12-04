@@ -1,10 +1,8 @@
-import React from 'react'
-
-const Button = () => {
+const Button = ({ children, ...props }) => {
     return (
-        <div>
-
-        </div>
+        <button className="button" {...props}>
+            {children}
+        </button>
     )
 }
 
