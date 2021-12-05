@@ -1,10 +1,9 @@
-import axios from 'axios'
 import ResumeBox from './ResumeBox'
 
 const ResumeSection = ({ lang, data }) => {
 
     return (
-        <section className="resume-section flex-row-sb">
+        <section className="resume-section">
             <ResumeBox
                 title={lang === 'es' ? 'Ingresos' : 'Incomes'}
                 lang={lang}
