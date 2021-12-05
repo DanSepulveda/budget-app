@@ -54,7 +54,7 @@ const transactionControllers = {
             } else {
                 throw new Error()
             }
-            let transactions = await pool.query(`SELECT transactions.id, transactions.description, transactions.type, transactions.amount, transactions.date, transactions.category_id as category, categories.name, categories.nombre, categories.image from transactions INNER JOIN categories ON category_id=categories.id${query ? query : ''}`)
+            let transactions = await pool.query(`SELECT transactions.id, transactions.description, transactions.type, transactions.amount, transactions.date, transactions.category_id as category, categories.name, categories.nombre, categories.image from transactions INNER JOIN categories ON category_id=categories.id ORDER BY date DESC${query ? query : ''}`)
             res.status(200).json({ success: true, response: transactions })
         } catch (error) {
             res.json({ success: false, error: error.message })

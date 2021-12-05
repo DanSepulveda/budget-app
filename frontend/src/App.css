@@ -2,6 +2,7 @@ html * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #444;
 }
 
 #root {
@@ -72,8 +73,7 @@ main {
 /* START RESUME SECTION */
 section.resume-section {
   width: 100%;
-  margin-bottom: 4em;
-  color: #444;
+  margin-bottom: 3em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2em;
@@ -153,6 +153,7 @@ article.resume-box h3 span {
 }
 /* END RESUME SECTION */
 
+/* START TRANSACTIONS SECTION */
 section.transaction-container {
   display: flex;
   flex-direction: column;
@@ -165,15 +166,12 @@ section.transaction-container h1 {
   font-size: 2em;
 }
 
-section.transaction-container article {
-  margin-bottom: 1em;
-}
-
 article.transaction-row {
   width: 100%;
   min-height: 10vh;
   background-color: white;
   border-radius: 5px;
+  margin-bottom: 1em;
 }
 
 article.transaction-row img {
@@ -183,9 +181,12 @@ article.transaction-row img {
 
 article.transaction-row div.info {
   flex: 1;
-  display: flex;
   margin-left: 1em;
   margin-right: 3em;
+}
+
+div.info h3.expenses {
+  color: tomato;
 }
 
 div.form-container {
@@ -237,7 +238,6 @@ div.form-section label {
   margin-top: 0.7em;
   margin-bottom: 0.3em;
   font-size: 20px;
-  color: #444;
 }
 
 div.form-section input,
@@ -245,7 +245,6 @@ div.form-section select {
   width: 100%;
   padding: 0.5em 1em;
   font-size: 17px;
-  color: #444;
 }
 
 button.button {
@@ -272,6 +271,6 @@ footer {
   box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
 }
 
-footer span {
+/* footer span {
   color: #444;
-}
+} */

@@ -10,7 +10,7 @@ const Home = ({ lang }) => {
 
     useEffect(() => {
         fetchData()
-    })
+    }, [])
 
     async function fetchData() {
         try {
@@ -40,7 +40,7 @@ const Home = ({ lang }) => {
             <Transactions
                 lang={lang}
                 transactions={data.transactions}
-                title={{ es: 'Últimos 10 movimientos', en: '10 Latest Transactions' }}
+                title={{ es: `Últimos movimientos`, en: `Latest Transactions` }}
             />
         </>
     )
