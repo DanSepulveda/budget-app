@@ -1,33 +1,7 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 import ResumeBox from './ResumeBox'
-import Swal from 'sweetalert2'
 
-const ResumeSection = ({ lang }) => {
-    const [data, setData] = useState({})
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
-    async function fetchData() {
-        try {
-            let response = await axios.get('http://localhost:4000/api/transactions/resume')
-            setData(response.data.response)
-        } catch (error) {
-            Swal.fire("We're having some problems", "Try Again Later", "error")
-        }
-        setLoading(false)
-    }
-
-    if (loading) {
-        return (
-            <section className="resume-section flex-row-cc">
-                <h1 style={{ textAlign: 'center' }}>{lang === 'es' ? 'Cargando' : 'Loading'}</h1>
-            </section>
-        )
-    }
+const ResumeSection = ({ lang, data }) => {
 
     return (
         <section className="resume-section flex-row-sb">
