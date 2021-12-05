@@ -19,14 +19,11 @@ router.route('/transaction/:id')
     .put(transactionControllers.editTransaction)
     .delete(transactionControllers.deleteTransaction)
 
-router.route('/transactions/resume')
+router.route('/resume')
     .get(transactionControllers.getResume)
 
 router.route('/reset')
-    .post(transactionControllers.reset)
-
-router.route('/reset')
-    .post(transactionControllers.reset)
+    .delete(transactionControllers.reset)
 
 // CATEGORIES
 router.route('/categories')
