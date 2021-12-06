@@ -274,3 +274,13 @@ footer {
 /* footer span {
   color: #444;
 } */
+
+.record-section {
+  width: 100%;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.record-section section {
+  width: 50%;
+}

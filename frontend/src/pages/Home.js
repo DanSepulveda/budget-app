@@ -40,7 +40,7 @@ const Home = ({ lang }) => {
             <Transactions
                 lang={lang}
                 transactions={data.transactions}
-                title={{ es: `Últimos movimientos`, en: `Latest Transactions` }}
+                title={lang === 'es' ? 'Últimos movimientos' : 'Latest Transactions'}
             />
         </>
     )

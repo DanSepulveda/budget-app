@@ -1,15 +1,15 @@
 import { useField } from 'formik'
 
-const TextInput = ({ label, ...props }) => {
+const DateInput = ({ label, ...props }) => {
     const [field, meta] = useField(props)
 
     return (
         <div>
             <label htmlFor={props.id}>{label}</label>
-            <input type="text" id={props.id} {...field} {...props} />
+            <input type="date" id={props.id} {...field} {...props} />
             {meta.touched && meta.error ? <div>{meta.error}</div> : null}
         </div>
     )
 }
 
-export default TextInput
+export default DateInput

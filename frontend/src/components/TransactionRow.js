@@ -3,7 +3,6 @@ import format from "./utils/format"
 import formatDate from './utils/formatDate'
 
 const TransactionRow = ({ data, lang, edit }) => {
-    console.log(edit)
     return (
         <article className="transaction-row flex-row-sb">
             <img src={data.image} alt="" />

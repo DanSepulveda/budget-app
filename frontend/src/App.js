@@ -5,7 +5,7 @@ import Layout from './components/Layout'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Transactions from './pages/Transactions'
+import History from './pages/History'
 
 const App = () => {
   const [lang, setLang] = useState('en')
@@ -26,7 +26,7 @@ const App = () => {
       <Layout>
         <Switch>
           <Route exact path='/' render={() => <Home lang={lang} />} />
-          <Route path='/transactions' render={() => <Transactions lang={lang} />} />
+          <Route path='/transactions' render={() => <History lang={lang} />} />
         </Switch>
       </Layout>
       <Footer lang={lang} />
